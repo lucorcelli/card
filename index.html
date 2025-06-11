@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Links da Minha Empresa</title>
+  <title>Links do Grupo Corcelli</title>
   <style>
     body { font-family: Arial, sans-serif; background: #f0f0f0; text-align: center; }
-    .container { margin: 60px auto; padding: 40px; background: #fff; border-radius: 10px; max-width: 400px; }
+    .container { margin: 60px auto; padding: 40px; background: #fff; border-radius: 10px; max-width: 400px; box-shadow: 0 2px 8px #0001;}
     h1 { color: #333; }
     a { 
-      display: block; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       margin: 15px 0; 
       padding: 15px; 
       border-radius: 5px; 
@@ -23,15 +26,24 @@
     .instagram { background: #E1306C; }
     .site { background: #333; }
     a:hover { opacity: 0.9; }
+    .icon { font-size: 1.4em; }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Links da Empresa</h1>
-    <a class="whatsapp" href="https://wa.me/SEUNUMERO" target="_blank">WhatsApp</a>
-    <a class="facebook" href="https://facebook.com/SUAPAGINA" target="_blank">Facebook</a>
-    <a class="instagram" href="https://instagram.com/SUAPAGINA" target="_blank">Instagram</a>
-    <a class="site" href="https://seusite.com" target="_blank">Site Oficial</a>
+    <a class="whatsapp" href="https://wa.me/+5511915417060" target="_blank">
+      <span class="icon">💬</span> WhatsApp
+    </a>
+    <a class="facebook" href="https://facebook.com/grupo.corcelli" target="_blank">
+      <span class="icon">📘</span> Facebook
+    </a>
+    <a class="instagram" href="https://instagram.com/Grupo_Corcelli" target="_blank">
+      <span class="icon">📸</span> Instagram
+    </a>
+    <a class="site" href="http://www.grupocorcelli.com/" target="_blank">
+      <span class="icon">🌐</span> Site Oficial
+    </a>
   </div>
 </body>
 </html>

@@ -37,61 +37,67 @@
       max-width: 300px;
       margin-left: auto;
       margin-right: auto;
+      background: #555; /* fallback */
     }
-    .link-btn svg { width: 28px; height: 28px; flex-shrink: 0; }
+    .link-btn img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: white;
+      padding: 2px;
+    }
     .whatsapp { background: #25D366; }
     .facebook { background: #1877F3; }
-    .instagram { background: linear-gradient(90deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%); }
-    .tiktok { background: #010101; }
+    .instagram { background: radial-gradient(circle at 30% 110%, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%); }
+    .tiktok { background: #000000; }
     .site { background: #333; }
     .email { background: #EA4335; }
     .phone { background: #008080; }
+    .salvar { background: #4CAF50; }
     a.link-btn:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 5px 16px #0002; opacity: .92; }
     .footer { margin-top: 25px; font-size: 12px; color: #aaa; }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Troque o src abaixo pela URL do seu logo -->
-        <img class="logo" src="https://firebasestorage.googleapis.com/v0/b/poplco.appspot.com/o/photos%2F2948307_ppp95D94DD9D?alt=media" alt="Logo da empresa">
+    <!-- Troque o src abaixo pelo caminho do seu logo -->
+    <img class="logo" src="imagens/logo.png" alt="Logo da empresa">
     <h1>Grupo Corcelli</h1>
     <!-- WhatsApp -->
-    <a class="link-btn whatsapp" href="https://wa.me/+5511915417060" target="_blank">
-      <svg viewBox="0 0 32 32"><path fill="#FFF" d="M16 2.9A13.1 13.1 0 0 0 7.2 25.3l-2.1 6.2 6.5-2A13.1 13.1 0 1 0 16 2.9zm0 23.7c-2.2 0-4.3-.6-6.2-1.8l-.4-.3-3.9 1.2 1.3-3.8-.3-.4a10.7 10.7 0 1 1 9.5 5.1zm6.1-8.2c-.3-.2-1.8-.9-2.1-1-0.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.7-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.7.1-.2.2-.4.3-.5.1-.1.1-.2.2-.4.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.3-.5-.6-.5-.7-.5h-.6c-.2 0-.4 0-.5.2-.7.6-1 1.5-.7 2.3.3.9 1.1 2.3 2.6 3.7 1.8 1.7 3.6 2.2 4.4 2.4.4.1.8 0 1.1-.2.4-.2 1.2-1.1 1.4-1.6.2-.3.2-.6.1-.8-.1-.2-.5-.4-.7-.5z"/></svg>
-      WhatsApp
+    <a class="link-btn whatsapp" href="https://wa.me/5511915417060" target="_blank">
+      <img src="imagens/whatsapp.png" alt="WhatsApp"> WhatsApp
     </a>
     <!-- Facebook -->
     <a class="link-btn facebook" href="https://facebook.com/grupo.corcelli" target="_blank">
-      <svg viewBox="0 0 32 32"><path fill="#FFF" d="M29 0H3C1.3 0 0 1.3 0 3v26c0 1.7 1.3 3 3 3h13V20h-4v-5h4v-3.7C16 8 18.6 6 21.9 6c1.1 0 2.2 0.1 2.5 0.1V10h-1.7c-1.4 0-1.7 0.7-1.7 1.7V15h4.2l-0.6 5h-3.6v12H29c1.7 0 3-1.3 3-3V3C32 1.3 30.7 0 29 0z"/></svg>
-      Facebook
+      <img src="imagens/facebook.png" alt="Facebook"> Facebook
     </a>
     <!-- Instagram -->
     <a class="link-btn instagram" href="https://instagram.com/Grupo_Corcelli" target="_blank">
-      <svg viewBox="0 0 32 32"><radialGradient id="a" cx="16" cy="16" r="16" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f9ce34"/><stop offset="0.5" stop-color="#ee2a7b"/><stop offset="1" stop-color="#6228d7"/></radialGradient><rect width="32" height="32" rx="7" fill="url(#a)"/><path fill="#FFF" d="M16 10.9A5.1 5.1 0 1 0 21.1 16 5.1 5.1 0 0 0 16 10.9zm0 8.4A3.3 3.3 0 1 1 19.3 16 3.3 3.3 0 0 1 16 19.3zm6.4-8.7a1.2 1.2 0 1 1-1.2-1.2 1.2 1.2 0 0 1 1.2 1.2zm3.4 1.2a7.6 7.6 0 0 0-2.1-5.3A7.6 7.6 0 0 0 22.3 5a7.6 7.6 0 0 0-5.3-2.1h-2A7.6 7.6 0 0 0 9.7 5a7.6 7.6 0 0 0-2.1 2.1A7.6 7.6 0 0 0 5 9.7 7.6 7.6 0 0 0 2.9 15v2A7.6 7.6 0 0 0 5 22.3a7.6 7.6 0 0 0 2.1 2.1 7.6 7.6 0 0 0 5.3 2.1h2a7.6 7.6 0 0 0 5.3-2.1 7.6 7.6 0 0 0 2.1-2.1 7.6 7.6 0 0 0 2.1-5.3v-2a7.6 7.6 0 0 0-2.1-5.3zM28 17a5.9 5.9 0 0 1-1.7 4.2 5.9 5.9 0 0 1-4.2 1.7h-2A5.9 5.9 0 0 1 16 28a5.9 5.9 0 0 1-4.2-1.7A5.9 5.9 0 0 1 10 22.3v-2A5.9 5.9 0 0 1 2.9 16v-2A5.9 5.9 0 0 1 10 9.7a5.9 5.9 0 0 1 4.2-1.7h2A5.9 5.9 0 0 1 28 15v2z"/></svg>
-      Instagram
+      <img src="imagens/instagram.png" alt="Instagram"> Instagram
     </a>
     <!-- TikTok -->
     <a class="link-btn tiktok" href="https://www.tiktok.com/grupocorcelli" target="_blank">
-      <svg viewBox="0 0 32 32"><path fill="#25F4EE" d="M29.8 9.4c-2.2-.1-4.3-1.2-5.4-3V23c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.2 0 .3 0 .5 0v-4.1c-.2 0-.3 0-.5 0-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10V9.4z"/><path fill="#FE2C55" d="M29.8 9.4c-2.2-.1-4.3-1.2-5.4-3V23c0 3.3-2.7 6-6 6V23c3.3 0 6-2.7 6-6V9.4z"/><path fill="#FFF" d="M24.4 9.4c-2.2-.1-4.3-1.2-5.4-3V23c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.2 0 .3 0 .5 0v-4.1c-.2 0-.3 0-.5 0-5.5 0-10 4.5-10 10s4.5 10 10 10 10-4.5 10-10V9.4z"/></svg>
-      TikTok
+      <img src="imagens/tiktok.png" alt="TikTok"> TikTok
     </a>
     <!-- Site -->
     <a class="link-btn site" href="http://www.grupocorcelli.com/" target="_blank">
-      <svg viewBox="0 0 32 32"><path fill="#FFF" d="M16 2.7A13.3 13.3 0 1 0 29.3 16 13.3 13.3 0 0 0 16 2.7zm0 24A10.7 10.7 0 1 1 26.7 16 10.7 10.7 0 0 1 16 26.7zm0-18.7a8 8 0 1 0 8 8 8 8 0 0 0-8-8zm0 14.7a6.7 6.7 0 1 1 6.7-6.7A6.7 6.7 0 0 1 16 22.7z"/></svg>
-      Site Oficial
+      <img src="imagens/site.png" alt="Site"> Site Oficial
     </a>
     <!-- E-mail -->
     <a class="link-btn email" href="mailto:botcorcelli@gmail.com">
-      <svg viewBox="0 0 32 32"><path fill="#FFF" d="M29 4H3C1.3 4 0 5.3 0 7v18c0 1.7 1.3 3 3 3h26c1.7 0 3-1.3 3-3V7c0-1.7-1.3-3-3-3zm0 2l-13 9-13-9h26zm0 22H3V8.4l12.1 8.4c.2.1.5.1.8 0L29 8.4V26z"/></svg>
-      E-mail
+      <img src="imagens/email.png" alt="E-mail"> E-mail
     </a>
     <!-- Telefone -->
     <a class="link-btn phone" href="tel:11915417060">
-      <svg viewBox="0 0 32 32"><path fill="#FFF" d="M29.2 23.4l-6.2-2.6a3.2 3.2 0 0 0-3.7 0.8l-2.3 2.9a19.4 19.4 0 0 1-8.7-8.7l2.9-2.3a3.2 3.2 0 0 0 0.8-3.7l-2.6-6.2A3.2 3.2 0 0 0 2.8 2H2.7A3.2 3.2 0 0 0 0 5.7C0 21.3 10.7 32 26.3 32a3.2 3.2 0 0 0 3.7-3.2v-0.1a3.2 3.2 0 0 0-0.8-2.3z"/></svg>
-      Ligue: (11) 99999-8888
+      <img src="imagens/phone.png" alt="Telefone"> Ligue: (11) 91541-7060
+    </a>
+    <!-- Salvar Contato -->
+    <a class="link-btn salvar" href="contato.vcf" download>
+      <img src="imagens/contact.png" alt="Salvar contato"> Salvar contato
     </a>
     <div class="footer">
-      &copy; 2025 Sua Empresa. Todos os direitos reservados.
+      &copy; 2025 Grupo Corcelli. Todos os direitos reservados.
     </div>
   </div>
 </body>

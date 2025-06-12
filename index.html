@@ -5,8 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Links do Grupo Corcelli</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f0f0f0; text-align: center; }
-    .container { margin: 60px auto; padding: 40px 20px; background: #fff; border-radius: 10px; max-width: 400px; box-shadow: 0 2px 8px #0001;}
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      text-align: center;
+      min-height: 100vh;
+    }
+    @media (max-width: 600px) {
+      body {
+        background: url('image1.png') no-repeat center center fixed;
+        background-size: cover;
+      }
+    }
+    .container {
+      margin: 60px auto;
+      padding: 40px 20px;
+      background: rgba(255,255,255,0.85); /* branco com transparência */
+      border-radius: 10px;
+      max-width: 400px;
+      box-shadow: 0 2px 8px #0001;
+    }
     h1 { color: #333; margin-bottom: 30px; }
     .logo {
       width: 130px;
@@ -37,7 +55,7 @@
       max-width: 250px;
       margin-left: auto;
       margin-right: auto;
-      background: #555; /* fallback */
+      background: #555;
     }
     .link-btn img {
       width: 28px;
@@ -65,38 +83,29 @@
 </head>
 <body>
   <div class="container">
-    <!-- Troque o src abaixo pelo caminho do seu logo -->
     <img class="logo" src="logo.png" alt="Logo da empresa">
     <h1>Grupo Corcelli</h1>
-   <!-- Salvar Contato -->
     <a class="link-btn salvar" href="contato.vcf" download>
       <img class="icon-whatsapp" src="contato.svg" alt="Salvar contato"> Salvar contato
     </a>
-    <!-- WhatsApp -->
     <a class="link-btn whatsapp" href="https://wa.me/5511915417060" target="_blank">
       <img class="icon-whatsapp" src="whatsapp.svg" alt="WhatsApp"> WhatsApp
     </a>
-    <!-- Facebook -->
     <a class="link-btn facebook" href="https://facebook.com/grupo.corcelli" target="_blank">
       <img class="icon-whatsapp" src="facebook.svg" alt="Facebook"> Facebook
     </a>
-    <!-- Instagram -->
     <a class="link-btn instagram" href="https://instagram.com/Grupo_Corcelli" target="_blank">
       <img class="icon-whatsapp" src="instagram.svg" alt="Instagram"> Instagram
     </a>
-    <!-- TikTok -->
     <a class="link-btn tiktok" href="https://www.tiktok.com/grupocorcelli" target="_blank">
       <img class="icon-whatsapp" src="tiktok.svg" alt="TikTok"> TikTok
     </a>
-    <!-- Site -->
     <a class="link-btn site" href="http://www.grupocorcelli.com/" target="_blank">
       <img class="icon-whatsapp" src="logo.png" alt="Site"> Site Oficial
     </a>
-    <!-- E-mail -->
     <a class="link-btn email" href="mailto:botcorcelli@gmail.com">
       <img class="icon-whatsapp" src="email.svg" alt="E-mail"> E-mail
     </a>
-    <!-- Telefone -->
     <a class="link-btn phone" href="tel:11915417060">
       <img class="icon-whatsapp" src="call.svg" alt="Telefone"> Ligue: (11) 91541-7060
     </a>

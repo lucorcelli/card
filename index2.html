@@ -187,18 +187,20 @@
     .carousel {
       display: flex;
       transition: transform 0.4s cubic-bezier(.4,1,.3,1);
-      touch-action: pan-x;
       will-change: transform;
+      /* width será setado via JS */
     }
     .carousel img {
       width: 100%;
-      max-width: 590px;
-      height: 590px;
+      max-width: none;
+      height: auto;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       flex-shrink: 0;
       user-select: none;
       pointer-events: none;
       display: block;
+      background: #eee;
     }
     .carousel-dots {
       position: absolute;
@@ -271,13 +273,10 @@
   </main>
   <!-- Carrossel de imagens abaixo do conteúdo (visível no celular) -->
   <div class="carousel-wrapper">
-    <div class="carousel" id="carousel">
-      <!-- As imagens serão inseridas via JS -->
-    </div>
+    <div class="carousel" id="carousel"></div>
     <div class="carousel-dots" id="carousel-dots"></div>
   </div>
   <script>
-    // Coloque o caminho correto das suas imagens abaixo:
     const images = [
       "carrossel/img1.PNG",
       "carrossel/img2.PNG",
@@ -293,14 +292,28 @@
 
     const carousel = document.getElementById('carousel');
     const dotsContainer = document.getElementById('carousel-dots');
-    let idx = 0, intervalId = null, isDragging = false, startX = 0, currentX = 0;
+    let idx = 0, intervalId = null, isDragging = false, startX = 0, currentX = 0, lastDx = 0;
 
-    // Gera os elementos das imagens
+    // Gera as imagens
     images.forEach(src => {
       const img = document.createElement('img');
       img.src = src;
       carousel.appendChild(img);
     });
+
+    // Função para largura correta do carrossel e imagens
+    function getSlideWidth() {
+      return document.querySelector('.carousel-wrapper').offsetWidth;
+    }
+
+    function updateCarouselWidth() {
+      const slideWidth = getSlideWidth();
+      carousel.style.width = (slideWidth * images.length) + 'px';
+      Array.from(carousel.children).forEach(img => {
+        img.style.width = slideWidth + 'px';
+      });
+    }
+    updateCarouselWidth();
 
     // Gera os dots
     images.forEach((_, i) => {
@@ -316,11 +329,6 @@
       });
     }
 
-    function getSlideWidth() {
-      // Garante que pega a largura real do carrossel (container)
-      return document.querySelector('.carousel-wrapper').offsetWidth;
-    }
-
     function goToSlide(i, resetTimer) {
       idx = (i + images.length) % images.length;
       const slideWidth = getSlideWidth();
@@ -334,13 +342,16 @@
     function nextSlide() { goToSlide(idx + 1); }
     intervalId = setInterval(nextSlide, 3000);
 
-    // Ajuste também ao redimensionar
-    window.addEventListener('resize', () => goToSlide(idx));
+    window.addEventListener('resize', () => {
+      updateCarouselWidth();
+      goToSlide(idx);
+    });
 
     // Touch events para arrastar (mobile)
     carousel.addEventListener('touchstart', e => {
       isDragging = true;
       startX = e.touches[0].clientX;
+      lastDx = 0;
       carousel.style.transition = 'none';
       clearInterval(intervalId);
     });
@@ -348,6 +359,7 @@
       if (!isDragging) return;
       currentX = e.touches[0].clientX;
       const dx = currentX - startX;
+      lastDx = dx;
       const slideWidth = getSlideWidth();
       carousel.style.transform = `translateX(${-idx * slideWidth + dx}px)`;
     });
@@ -355,19 +367,23 @@
       if (!isDragging) return;
       isDragging = false;
       carousel.style.transition = '';
-      const dx = currentX - startX;
-      if (dx > 50) goToSlide(idx - 1, true);
-      else if (dx < -50) goToSlide(idx + 1, true);
+      if (lastDx > 50) goToSlide(idx - 1, true);
+      else if (lastDx < -50) goToSlide(idx + 1, true);
       else goToSlide(idx, true);
+      lastDx = 0;
     });
 
     // Mouse (desktop)
     let mouseDown = false;
-    carousel.addEventListener('mousedown', e => { mouseDown = true; startX = e.clientX; clearInterval(intervalId); carousel.style.transition = 'none'; });
+    carousel.addEventListener('mousedown', e => {
+      mouseDown = true; startX = e.clientX; lastDx = 0;
+      clearInterval(intervalId); carousel.style.transition = 'none';
+    });
     carousel.addEventListener('mousemove', e => {
       if (!mouseDown) return;
       currentX = e.clientX;
       const dx = currentX - startX;
+      lastDx = dx;
       const slideWidth = getSlideWidth();
       carousel.style.transform = `translateX(${-idx * slideWidth + dx}px)`;
     });
@@ -375,12 +391,15 @@
       if (!mouseDown) return;
       mouseDown = false;
       carousel.style.transition = '';
-      const dx = currentX - startX;
-      if (dx > 50) goToSlide(idx - 1, true);
-      else if (dx < -50) goToSlide(idx + 1, true);
+      if (lastDx > 50) goToSlide(idx - 1, true);
+      else if (lastDx < -50) goToSlide(idx + 1, true);
       else goToSlide(idx, true);
+      lastDx = 0;
     });
     carousel.addEventListener('mouseleave', e => { if (mouseDown) { mouseDown = false; goToSlide(idx, true); } });
+
+    // Inicializa na posição certa ao carregar
+    window.addEventListener('DOMContentLoaded', () => goToSlide(0));
   </script>
 </body>
 </html>

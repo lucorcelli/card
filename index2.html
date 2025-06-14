@@ -6,14 +6,25 @@
   <title>Links do Grupo Corcelli</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: url('fundoapp1.jpg') no-repeat center center;
-      background-size: cover;
-      text-align: center;
       margin: 0;
       padding: 0;
       min-height: 100vh;
       color: #fff;
+      font-family: Arial, sans-serif;
+      background: #222; /* cor sólida para fora da faixa */
+      text-align: center;
+    }
+    .faixa-central {
+      /* Essa é a faixa que tem o fundo com imagem */
+      background: url('fundoapp1.jpg') no-repeat center center;
+      background-size: cover;
+      max-width: 600px;
+      min-height: 100vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
     }
     .container {
       margin: 20px auto;
@@ -21,6 +32,7 @@
       border-radius: 10px;
       max-width: 400px;
       box-shadow: 0 2px 8px #0008;
+      background: transparent;
     }
     .logo {
       width: 130px;
@@ -171,24 +183,11 @@
       box-shadow: 0 2px 10px #0005;
       background: #fff;
       position: relative;
-      /*display: none; */
-    }
-    @media (max-width: 590px) {
-      .container { max-width: 98vw; padding: 10vw 1vw; }
-      .icon-grid { grid-template-columns: repeat(2, 1fr); gap: 18px 8px; }
-      .icon-img,
-      .destaque-link .icon-img { width: 70px; height: 70px; }
-      .logo { width: 90px; height: 90px;}
-      .destaque-label { font-size: 12px; }
-    }
-    @media (max-width: 600px) {
-      /*.carousel-wrapper { display: block; }*/
     }
     .carousel {
       display: flex;
       transition: transform 0.4s cubic-bezier(.4,1,.3,1);
       will-change: transform;
-      /* width será setado via JS */
     }
     .carousel img {
       width: 100%;
@@ -224,57 +223,72 @@
       opacity: 1;
       border-color: #007aff;
     }
+    @media (max-width: 600px) {
+      .faixa-central, .carousel-wrapper {
+        max-width: 100vw;
+        border-radius: 0 !important;
+      }
+    }
+    @media (max-width: 590px) {
+      .container { max-width: 98vw; padding: 10vw 1vw; }
+      .icon-grid { grid-template-columns: repeat(2, 1fr); gap: 18px 8px; }
+      .icon-img,
+      .destaque-link .icon-img { width: 70px; height: 70px; }
+      .logo { width: 90px; height: 90px;}
+      .destaque-label { font-size: 12px; }
+    }
   </style>
 </head>
 <body>
-  <main class="container">
-    <img class="logo" src="logo.png" alt="Logo da empresa Grupo Corcelli">
-    <h1>Grupo Corcelli</h1>
-    <div class="redes-title">Acesse nossas redes sociais</div>
-    <div class="destaque-row">
-      <a class="destaque-link salvar" href="contato.vcf" download aria-label="Salvar contato do Grupo Corcelli">
-        <img class="icon-img" src="contato.svg" alt="Salvar contato">
-        <span class="destaque-label">Salvar contato</span>
-      </a>
-      <a class="destaque-link phone" href="tel:11915417060" aria-label="Ligar para Grupo Corcelli">
-        <img class="icon-img" src="call.svg" alt="Telefone">
-        <span class="destaque-label">Ligar</span>
-      </a>
+  <div class="faixa-central">
+    <main class="container">
+      <img class="logo" src="logo.png" alt="Logo da empresa Grupo Corcelli">
+      <h1>Grupo Corcelli</h1>
+      <div class="redes-title">Acesse nossas redes sociais</div>
+      <div class="destaque-row">
+        <a class="destaque-link salvar" href="contato.vcf" download aria-label="Salvar contato do Grupo Corcelli">
+          <img class="icon-img" src="contato.svg" alt="Salvar contato">
+          <span class="destaque-label">Salvar contato</span>
+        </a>
+        <a class="destaque-link phone" href="tel:11915417060" aria-label="Ligar para Grupo Corcelli">
+          <img class="icon-img" src="call.svg" alt="Telefone">
+          <span class="destaque-label">Ligar</span>
+        </a>
+      </div>
+      <div class="icon-grid">
+        <a class="icon-link" href="https://wa.me/5511915417060" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Grupo Corcelli">
+          <img class="icon-img" src="whatsapp.svg" alt="WhatsApp">
+          <span class="icon-label">WhatsApp</span>
+        </a>
+        <a class="icon-link" href="https://facebook.com/grupo.corcelli" target="_blank" rel="noopener noreferrer" aria-label="Facebook Grupo Corcelli">
+          <img class="icon-img" src="facebook.svg" alt="Facebook">
+          <span class="icon-label">Facebook</span>
+        </a>
+        <a class="icon-link" href="https://instagram.com/Grupo_Corcelli" target="_blank" rel="noopener noreferrer" aria-label="Instagram Grupo Corcelli">
+          <img class="icon-img" src="instagram.svg" alt="Instagram">
+          <span class="icon-label">Instagram</span>
+        </a>
+        <a class="icon-link" href="https://www.tiktok.com/grupocorcelli" target="_blank" rel="noopener noreferrer" aria-label="TikTok Grupo Corcelli">
+          <img class="icon-img" src="tiktok.svg" alt="TikTok">
+          <span class="icon-label">TikTok</span>
+        </a>
+        <a class="icon-link" href="http://www.grupocorcelli.com/" target="_blank" rel="noopener noreferrer" aria-label="Site Grupo Corcelli">
+          <img class="icon-img" src="logo.png" alt="Site">
+          <span class="icon-label">Site</span>
+        </a>
+        <a class="icon-link" href="mailto:botcorcelli@gmail.com" aria-label="E-mail Grupo Corcelli">
+          <img class="icon-img" src="email.svg" alt="E-mail">
+          <span class="icon-label">E-mail</span>
+        </a>
+      </div>
+      <footer>
+        &copy; 2025 Grupo Corcelli. Todos os direitos reservados.
+      </footer>
+    </main>
+    <div class="carousel-wrapper">
+      <div class="carousel" id="carousel"></div>
+      <div class="carousel-dots" id="carousel-dots"></div>
     </div>
-    <div class="icon-grid">
-      <a class="icon-link" href="https://wa.me/5511915417060" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Grupo Corcelli">
-        <img class="icon-img" src="whatsapp.svg" alt="WhatsApp">
-        <span class="icon-label">WhatsApp</span>
-      </a>
-      <a class="icon-link" href="https://facebook.com/grupo.corcelli" target="_blank" rel="noopener noreferrer" aria-label="Facebook Grupo Corcelli">
-        <img class="icon-img" src="facebook.svg" alt="Facebook">
-        <span class="icon-label">Facebook</span>
-      </a>
-      <a class="icon-link" href="https://instagram.com/Grupo_Corcelli" target="_blank" rel="noopener noreferrer" aria-label="Instagram Grupo Corcelli">
-        <img class="icon-img" src="instagram.svg" alt="Instagram">
-        <span class="icon-label">Instagram</span>
-      </a>
-      <a class="icon-link" href="https://www.tiktok.com/grupocorcelli" target="_blank" rel="noopener noreferrer" aria-label="TikTok Grupo Corcelli">
-        <img class="icon-img" src="tiktok.svg" alt="TikTok">
-        <span class="icon-label">TikTok</span>
-      </a>
-      <a class="icon-link" href="http://www.grupocorcelli.com/" target="_blank" rel="noopener noreferrer" aria-label="Site Grupo Corcelli">
-        <img class="icon-img" src="logo.png" alt="Site">
-        <span class="icon-label">Site</span>
-      </a>
-      <a class="icon-link" href="mailto:botcorcelli@gmail.com" aria-label="E-mail Grupo Corcelli">
-        <img class="icon-img" src="email.svg" alt="E-mail">
-        <span class="icon-label">E-mail</span>
-      </a>
-    </div>
-    <footer>
-      &copy; 2025 Grupo Corcelli. Todos os direitos reservados.
-    </footer>
-  </main>
-  <!-- Carrossel de imagens abaixo do conteúdo (visível no celular) -->
-  <div class="carousel-wrapper">
-    <div class="carousel" id="carousel"></div>
-    <div class="carousel-dots" id="carousel-dots"></div>
   </div>
   <script>
     const images = [
@@ -294,14 +308,12 @@
     const dotsContainer = document.getElementById('carousel-dots');
     let idx = 0, intervalId = null, isDragging = false, startX = 0, currentX = 0, lastDx = 0;
 
-    // Gera as imagens
     images.forEach(src => {
       const img = document.createElement('img');
       img.src = src;
       carousel.appendChild(img);
     });
 
-    // Função para largura correta do carrossel e imagens
     function getSlideWidth() {
       return document.querySelector('.carousel-wrapper').offsetWidth;
     }
@@ -315,7 +327,6 @@
     }
     updateCarouselWidth();
 
-    // Gera os dots
     images.forEach((_, i) => {
       const dot = document.createElement('span');
       dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
@@ -347,7 +358,6 @@
       goToSlide(idx);
     });
 
-    // Touch events para arrastar (mobile)
     carousel.addEventListener('touchstart', e => {
       isDragging = true;
       startX = e.touches[0].clientX;
@@ -373,7 +383,6 @@
       lastDx = 0;
     });
 
-    // Mouse (desktop)
     let mouseDown = false;
     carousel.addEventListener('mousedown', e => {
       mouseDown = true; startX = e.clientX; lastDx = 0;
@@ -398,7 +407,6 @@
     });
     carousel.addEventListener('mouseleave', e => { if (mouseDown) { mouseDown = false; goToSlide(idx, true); } });
 
-    // Inicializa na posição certa ao carregar
     window.addEventListener('DOMContentLoaded', () => goToSlide(0));
   </script>
 </body>

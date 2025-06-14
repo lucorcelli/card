@@ -15,7 +15,6 @@
       text-align: center;
     }
     .faixa-central {
-      /* Essa é a faixa que tem o fundo com imagem */
       background: url('fundoapp1.jpg') no-repeat center center;
       background-size: cover;
       max-width: 600px;
@@ -25,12 +24,25 @@
       flex-direction: column;
       align-items: stretch;
       justify-content: flex-start;
+      border-radius: 20px;
+      box-shadow: 0 4px 30px #000a, 0 1.5px 12px #0006;
+      /* Sombra aprimorada para desktop */
+      overflow: hidden;
+      transition: border-radius 0.3s, box-shadow 0.3s;
     }
+    @media (max-width: 650px) {
+      .faixa-central {
+        max-width: 100vw;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+
     .container {
       margin: 20px auto;
       padding: 40px 20px;
       border-radius: 10px;
-      max-width: 600px;
+      max-width: 400px;
       box-shadow: 0 2px 8px #0008;
       background: transparent;
     }
@@ -227,6 +239,7 @@
       .faixa-central, .carousel-wrapper {
         max-width: 100vw;
         border-radius: 0 !important;
+        box-shadow: none !important;
       }
     }
     @media (max-width: 590px) {

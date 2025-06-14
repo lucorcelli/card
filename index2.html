@@ -163,7 +163,7 @@
     }
     .carousel-wrapper {
       width: 100vw;
-      max-width: 620px;
+      max-width: 630px;
       overflow: hidden;
       margin: 10px auto 0 auto;
       border-radius: 12px;
@@ -338,7 +338,7 @@
       }
     }
     function nextSlide() { goToSlide(idx + 1); }
-    intervalId = setInterval(nextSlide, 3000);
+    intervalId = setInterval(nextSlide, 2000);
 
     window.addEventListener('resize', () => {
       updateCarouselWidth();

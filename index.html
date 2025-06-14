@@ -134,8 +134,21 @@
       border-color: #007aff;
     }
     @media (max-width: 600px) {
-      .logo-fade, .logo-fade .logo-img { width: 90px; height: 90px; }
-      .carousel-wrapper { max-width: 98vw; }
+      .container, .carousel-wrapper {
+        max-width: 100vw;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: rgba(0,0,0,0.5);
+      }
+    }
+    @media (max-width: 600px) {
+      .container { max-width: 98vw; padding: 10vw 1vw; }
+      .icon-grid { grid-template-columns: repeat(3, 1fr); gap: 18px 8px; }
+      .icon-img,
+      .destaque-link .icon-img { width: 70px; height: 70px; }
+      .logo-fade, .logo-fade .logo-img { width: 90px; height: 90px;}
+      .logo { width: 90px; height: 90px;}
+      .destaque-label { font-size: 12px; }
     }
   </style>
 </head>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -37,7 +38,7 @@
       height: 130px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #eee;
+      border: 4px solid #fff;
       box-shadow: 0 2px 6px #0002;
       background: #fff;
       transition: opacity 0.7s;
@@ -49,45 +50,133 @@
       opacity: 1;
       z-index: 2;
     }
-    a.link-btn {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 14px;
-      margin: 13px 0;
-      padding: 1px 20px;
-      border-radius: 40px;
-      color: white;
-      text-decoration: none;
-      font-size: 17px;
-      font-weight: 500;
-      box-shadow: 0 2px 6px #0001;
-      transition: transform .12s, box-shadow .12s, opacity .2s;
-      max-width: 250px;
-      margin-left: auto;
-      margin-right: auto;
-      background: rgba(0, 0, 0, 0.7);
+    h1, .redes-title, .destaque-label, .icon-label {
+      color: #fff;
+      text-shadow: 0 1px 4px #0009;
     }
-    .link-btn img {
-      width: 28px;
-      height: 28px;
+    .redes-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 32px 0 22px 0;
+      letter-spacing: 0.01em;
+    }
+    .destaque-row {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-bottom: 36px;
+    }
+    .destaque-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      background: none;
+      box-shadow: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .destaque-link:active,
+    .destaque-link:focus,
+    .destaque-link:hover {
+      opacity: 0.9;
+      transform: translateY(-1px) scale(1.04);
+    }
+    .destaque-link .icon-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 40%;
+      object-fit: contain;
+      margin-bottom: 6px;
+      background: #fff;
+      box-shadow: 0 2px 10px #0002;
+      padding: 4px;
+      border: 2px solid #eee;
+      transition: box-shadow 0.2s;
+      display: block;
+    }
+    .destaque-link.phone .icon-img {
+      background: #1877F3;
+      border: 2px solid #1257A3;
+    }
+    .destaque-label {
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 2px;
+      transition: opacity 0.18s;
+      letter-spacing: 0.01em;
+    }
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px 12px;
+      justify-items: center;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    .icon-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      background: none;
+      box-shadow: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .icon-link:active,
+    .icon-link:focus,
+    .icon-link:hover {
+      opacity: 0.9;
+      transform: translateY(-2px) scale(1.03);
+    }
+    .icon-img {
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       object-fit: contain;
-      background: white;
-      padding: 2px;
+      background: #fff;
+      box-shadow: 0 2px 6px #0001;
+      margin-bottom: 4px;
+      padding: 4px;
+      border: 2px solid #eee;
+      transition: box-shadow 0.2s;
+      display: block;
     }
-    .icon-whatsapp {
-      width: 48px !important;
-      height: 48px !important;
+    .icon-label {
+      opacity: 0;
+      height: 0;
+      font-size: 10px;
+      font-weight: 500;
+      pointer-events: none;
+      transition: opacity 0.18s;
+      margin-top: 1px;
+      margin-bottom: 0;
+      letter-spacing: 0.01em;
+      color: #fff;
+      text-shadow: 0 1px 4px #0009;
     }
-    a.link-btn:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 5px 16px #0002; opacity: .92; }
-    .footer { margin-top: 25px; font-size: 12px; color: #aaa; }
-    /* Carrossel */
+    .icon-link:hover .icon-label,
+    .icon-link:focus .icon-label {
+      opacity: 1;
+      height: auto;
+      pointer-events: auto;
+    }
+    footer {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #fff;
+      text-shadow: 0 1px 4px #0009;
+    }
     .carousel-wrapper {
       width: 100vw;
       max-width: 530px;
       overflow: hidden;
-      margin: 30px auto 0 auto;
+      margin: 10px auto 0 auto;
       border-radius: 12px;
       box-shadow: 0 2px 10px #0005;
       background: #fff;
@@ -152,7 +241,7 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <main class="container">
     <!-- Logo com fade multicolorido -->
     <div class="logo-fade" id="logo-fade">
       <img class="logo-img show" src="logo/logo1.png" alt="Logo Corcelli cor 1">
@@ -161,35 +250,50 @@
       <img class="logo-img" src="logo/logo4.png" alt="Logo Corcelli cor 4">
     </div>
     <h1>Grupo Corcelli</h1>
-    <a class="link-btn salvar" href="contato.vcf" download>
-      <img class="icon-whatsapp" src="contato.svg" alt="Salvar contato"> Salvar contato
-    </a>
-    <a class="link-btn whatsapp" href="https://wa.me/5511915417060" target="_blank">
-      <img class="icon-whatsapp" src="whatsapp.svg" alt="WhatsApp"> WhatsApp
-    </a>
-    <a class="link-btn facebook" href="https://facebook.com/grupo.corcelli" target="_blank">
-      <img class="icon-whatsapp" src="facebook.svg" alt="Facebook"> Facebook
-    </a>
-    <a class="link-btn instagram" href="https://instagram.com/Grupo_Corcelli" target="_blank">
-      <img class="icon-whatsapp" src="instagram.svg" alt="Instagram"> Instagram
-    </a>
-    <a class="link-btn tiktok" href="https://www.tiktok.com/grupocorcelli" target="_blank">
-      <img class="icon-whatsapp" src="tiktok.svg" alt="TikTok"> TikTok
-    </a>
-    <a class="link-btn site" href="http://www.grupocorcelli.com/" target="_blank">
-      <img class="icon-whatsapp" src="logo.png" alt="Site"> Site Oficial
-    </a>
-    <a class="link-btn email" href="mailto:botcorcelli@gmail.com">
-      <img class="icon-whatsapp" src="email.svg" alt="E-mail"> E-mail
-    </a>
-    <a class="link-btn phone" href="tel:11915417060">
-      <img class="icon-whatsapp" src="call.svg" alt="Telefone"> Ligue: (11) 91541-7060
-    </a>
-    <div class="footer">
-      &copy; 2025 Grupo Corcelli. Todos os direitos reservados.
+    <div class="redes-title">Acesse nossas redes sociais</div>
+    <div class="destaque-row">
+      <a class="destaque-link phone" href="contato.vcf" download aria-label="Salvar contato do Grupo Corcelli">
+        <img class="icon-img" src="contato.svg" alt="Salvar contato">
+        <span class="destaque-label">Salvar contato</span>
+      </a>
+      <a class="destaque-link phone" href="tel:11915417060" aria-label="Ligar para Grupo Corcelli">
+        <img class="icon-img" src="call.svg" alt="Telefone">
+        <span class="destaque-label">Ligar</span>
+      </a>
+      <a class="destaque-link phone" href="https://maps.app.goo.gl/awiQ7khHEFbZFVzb9" aria-label="Endereço Matriz Grupo Corcelli">
+        <img class="icon-img" src="address.svg" alt="Endereço">
+        <span class="destaque-label">Endereço</span>
+      </a>
     </div>
-  </div>
-  <!-- Carrossel abaixo dos botões -->
+    <div class="icon-grid">
+      <a class="icon-link" href="https://wa.me/5511915417060" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Grupo Corcelli">
+        <img class="icon-img" src="whatsapp.svg" alt="WhatsApp">
+        <span class="icon-label">WhatsApp</span>
+      </a>
+      <a class="icon-link" href="https://facebook.com/grupo.corcelli" target="_blank" rel="noopener noreferrer" aria-label="Facebook Grupo Corcelli">
+        <img class="icon-img" src="facebook.svg" alt="Facebook">
+        <span class="icon-label">Facebook</span>
+      </a>
+      <a class="icon-link" href="https://instagram.com/Grupo_Corcelli" target="_blank" rel="noopener noreferrer" aria-label="Instagram Grupo Corcelli">
+        <img class="icon-img" src="instagram.svg" alt="Instagram">
+        <span class="icon-label">Instagram</span>
+      </a>
+      <a class="icon-link" href="https://www.tiktok.com/grupocorcelli" target="_blank" rel="noopener noreferrer" aria-label="TikTok Grupo Corcelli">
+        <img class="icon-img" src="tiktok.svg" alt="TikTok">
+        <span class="icon-label">TikTok</span>
+      </a>
+      <a class="icon-link" href="http://www.grupocorcelli.com/" target="_blank" rel="noopener noreferrer" aria-label="Site Grupo Corcelli">
+        <img class="icon-img" src="logo.png" alt="Site">
+        <span class="icon-label">Site</span>
+      </a>
+      <a class="icon-link" href="mailto:botcorcelli@gmail.com" aria-label="E-mail Grupo Corcelli">
+        <img class="icon-img" src="email.svg" alt="E-mail">
+        <span class="icon-label">E-mail</span>
+      </div>
+    <footer>
+      &copy; 2025 Grupo Corcelli. Todos os direitos reservados.
+    </footer>
+  </main>
   <div class="carousel-wrapper">
     <div class="carousel" id="carousel"></div>
     <div class="carousel-dots" id="carousel-dots"></div>

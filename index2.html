@@ -22,7 +22,6 @@
       background: rgba(0,0,0,0.45);
       border-radius: 20px;
     }
-    /* LOGO FADING MULTICOR */
     .logo-fade {
       position: relative;
       width: 130px;
@@ -43,7 +42,6 @@
       transition: opacity 0.7s;
       opacity: 0;
       z-index: 1;
-      display: block;
     }
     .logo-fade .logo-img.show {
       opacity: 1;
@@ -71,9 +69,6 @@
       align-items: center;
       text-decoration: none;
       color: #fff;
-      background: none;
-      box-shadow: none;
-      outline: none;
       cursor: pointer;
     }
     .destaque-link:active,
@@ -93,7 +88,6 @@
       padding: 4px;
       border: 2px solid #eee;
       transition: box-shadow 0.2s;
-      display: block;
     }
     .destaque-link.phone .icon-img {
       background: #1877F3;
@@ -120,11 +114,7 @@
       align-items: center;
       text-decoration: none;
       color: #fff;
-      font-size: 16px;
       font-weight: 500;
-      background: none;
-      box-shadow: none;
-      outline: none;
       cursor: pointer;
     }
     .icon-link:active,
@@ -144,26 +134,18 @@
       padding: 4px;
       border: 2px solid #eee;
       transition: box-shadow 0.2s;
-      display: block;
     }
     .icon-label {
-      opacity: 0;
-      height: 0;
+      opacity: 1;
+      height: auto;
       font-size: 10px;
       font-weight: 500;
-      pointer-events: none;
       transition: opacity 0.18s;
       margin-top: 1px;
       margin-bottom: 0;
       letter-spacing: 0.01em;
       color: #fff;
       text-shadow: 0 1px 4px #0009;
-    }
-    .icon-link:hover .icon-label,
-    .icon-link:focus .icon-label {
-      opacity: 1;
-      height: auto;
-      pointer-events: auto;
     }
     footer {
       margin-top: 25px;
@@ -226,15 +208,12 @@
         border-radius: 0 !important;
         box-shadow: none !important;
         background: rgba(0,0,0,0.5);
-      }
     }
-    @media (max-width: 500px) {
       .container { max-width: 98vw; padding: 10vw 1vw; }
       .icon-grid { grid-template-columns: repeat(3, 1fr); gap: 18px 8px; }
       .icon-img,
       .destaque-link .icon-img { width: 70px; height: 70px; }
       .logo-fade, .logo-fade .logo-img { width: 90px; height: 90px;}
-      .logo { width: 90px; height: 90px;}
       .destaque-label { font-size: 12px; }
     }
   </style>
@@ -288,7 +267,8 @@
       <a class="icon-link" href="mailto:botcorcelli@gmail.com" aria-label="E-mail">
         <img class="icon-img" src="email.svg" alt="E-mail">
         <span class="icon-label">E-mail</span>
-      </div>
+      </a>
+    </div>
     <footer>
       &copy; 2025 Live! Itatiba. Todos os direitos reservados.
     </footer>
@@ -308,7 +288,6 @@
         logos[logoIdx].classList.add('show');
       }, 1800);
     })();
-
     // CAROUSEL
     const images = [
       "carrossel2/img1.jpg",
@@ -323,22 +302,18 @@
       "carrossel2/img10.jpg",
       "carrossel2/img11.jpg"
     ];
-
     const carousel = document.getElementById('carousel');
     const dotsContainer = document.getElementById('carousel-dots');
     let idx = 0, intervalId = null, isDragging = false, startX = 0, currentX = 0, lastDx = 0;
-
     images.forEach((src, i) => {
       const img = document.createElement('img');
       img.src = src;
       img.alt = `Imagem do carrossel ${i+1}`;
       carousel.appendChild(img);
     });
-
     function getSlideWidth() {
       return document.querySelector('.carousel-wrapper').offsetWidth;
     }
-
     function updateCarouselWidth() {
       const slideWidth = getSlideWidth();
       carousel.style.width = (slideWidth * images.length) + 'px';
@@ -347,20 +322,17 @@
       });
     }
     updateCarouselWidth();
-
     images.forEach((_, i) => {
       const dot = document.createElement('span');
       dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
       dot.onclick = () => goToSlide(i, true);
       dotsContainer.appendChild(dot);
     });
-
     function updateDots() {
       document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
         dot.classList.toggle('active', i === idx);
       });
     }
-
     function goToSlide(i, resetTimer) {
       idx = (i + images.length) % images.length;
       const slideWidth = getSlideWidth();
@@ -373,12 +345,10 @@
     }
     function nextSlide() { goToSlide(idx + 1); }
     intervalId = setInterval(nextSlide, 2000);
-
     window.addEventListener('resize', () => {
       updateCarouselWidth();
       goToSlide(idx);
     });
-
     carousel.addEventListener('touchstart', e => {
       isDragging = true;
       startX = e.touches[0].clientX;
@@ -403,7 +373,6 @@
       else goToSlide(idx, true);
       lastDx = 0;
     });
-
     let mouseDown = false;
     carousel.addEventListener('mousedown', e => {
       mouseDown = true; startX = e.clientX; lastDx = 0;
@@ -427,7 +396,6 @@
       lastDx = 0;
     });
     carousel.addEventListener('mouseleave', e => { if (mouseDown) { mouseDown = false; goToSlide(idx, true); } });
-
     window.addEventListener('DOMContentLoaded', () => goToSlide(0));
   </script>
 </body>

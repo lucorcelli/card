@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Links do Grupo Corcelli loja 01</title>
+  <title>Links do Grupo Corcelli loja 03</title>
   <style>
     body {
       margin: 0;
@@ -12,7 +12,7 @@
       color: #fff;
       font-family: Arial, sans-serif;
       text-align: center;
-      background: url('fundoapp1.jpg') no-repeat center center fixed;
+      background: url('fundoapp3.jpg') no-repeat center center fixed;
       background-size: cover;
     }
     .container {
@@ -43,7 +43,7 @@
     }
     .logo-img.show { opacity: 1; z-index: 2; }
 
-    h1, .redes-title, .destaque-label, .icon-label {
+    h1, .redes-title {
       color: #fff;
       text-shadow: 0 1px 4px #0009;
     }
@@ -51,50 +51,6 @@
       font-size: 18px;
       font-weight: bold;
       margin: 32px 0 22px;
-    }
-    .destaque-row {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      margin-bottom: 36px;
-    }
-    .destaque-link {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: #fff;
-      cursor: pointer;
-    }
-    .destaque-link:active,
-    .destaque-link:focus,
-    .destaque-link:hover {
-      opacity: 0.9;
-      transform: translateY(-1px) scale(1.04);
-    }
-    .icon-img {
-      width: 80px; height: 80px;
-      border-radius: 50%;
-      object-fit: contain;
-      background: #fff;
-      box-shadow: 0 2px 6px #0001;
-      margin-bottom: 4px;
-      padding: 4px;
-      border: 2px solid #eee;
-      transition: box-shadow 0.2s;
-    }
-    .destaque-link .icon-img {
-      width: 70px; height: 70px;
-      border-radius: 40%;
-      margin-bottom: 6px;
-      border: 2px solid #eee;
-      background: #1877F3;
-      border-color: #1257A3;
-    }
-    .destaque-label {
-      font-size: 14px;
-      font-weight: bold;
-      margin-top: 2px;
     }
     .icon-grid {
       display: grid;
@@ -118,8 +74,19 @@
       opacity: 0.9;
       transform: translateY(-2px) scale(1.03);
     }
+    .icon-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 30%;
+      object-fit: contain;
+      background: #fff;
+      box-shadow: 0 2px 6px #0001;
+      margin-bottom: 4px;
+      padding: 4px;
+      border: 2px solid #eee;
+    }
     .icon-label {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 500;
       margin-top: 1px;
       color: #fff;
@@ -189,10 +156,8 @@
       }
       .container { max-width: 98vw; padding: 10vw 1vw; }
       .icon-grid { grid-template-columns: repeat(3, 1fr); gap: 18px 8px; }
-      .icon-img,
-      .destaque-link .icon-img { width: 70px; height: 70px; }
+      .icon-img { width: 50px; height: 50px; }
       .logo-fade, .logo-img { width: 90px; height: 90px;}
-      .destaque-label { font-size: 12px; }
     }
   </style>
 </head>
@@ -204,36 +169,34 @@
       <img class="logo-img" src="logo/logo3.png" alt="Logo Corcelli cor 3">
       <img class="logo-img" src="logo/logo4.png" alt="Logo Corcelli cor 4">
     </div>
-    <h1>Grupo Corcelli Loja01</h1>
+    <h1>Concept Store</h1>
     <div class="redes-title">Acesse nossas redes sociais</div>
-    <div class="destaque-row">
-      <a class="destaque-link phone" href="contato.vcf" download aria-label="Salvar contato do Grupo Corcelli">
-        <img class="icon-img" src="contato.svg" alt="Salvar contato">
-        <span class="destaque-label">Salvar contato</span>
-      </a>
-      <a class="destaque-link phone" href="tel:114524-1485" aria-label="Ligar para Grupo Corcelli">
-        <img class="icon-img" src="call.svg" alt="Telefone">
-        <span class="destaque-label">Ligar</span>
-      </a>
-      <a class="destaque-link phone" href="https://maps.app.goo.gl/MF9RV9H7D4gPbi7DA" aria-label="Endereço Matriz Grupo Corcelli">
-        <img class="icon-img" src="address.svg" alt="Endereço">   
-        <span class="destaque-label">Endereço</span>
-      </a>
-    </div>
     <div class="icon-grid">
-      <a class="icon-link" href="https://api.whatsapp.com/send?phone=5511915417060&text=Ol%C3%A1,%20Grupo%20Corcelli!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20e%20servi%C3%A7os%20dispon%C3%ADveis" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Grupo Corcelli">
+      <a class="icon-link" href="contato.vcf" download aria-label="Salvar contato">
+        <img class="icon-img" src="contato.svg" alt="Salvar contato">
+        <span class="icon-label">Salvar contato</span>
+      </a>
+      <a class="icon-link" href="tel:1145385420" aria-label="Ligar loja">
+        <img class="icon-img" src="call.svg" alt="Telefone">
+        <span class="icon-label">Ligar</span>
+      </a>
+      <a class="icon-link" href="https://maps.app.goo.gl/hBNSf2g8xXD2dTdSA" aria-label="Endereço">
+        <img class="icon-img" src="address.svg" alt="Endereço">   
+        <span class="icon-label">Endereço</span>
+      </a>
+      <a class="icon-link" href="https://api.whatsapp.com/send?phone=5511982594379&text=Ol%C3%A1,%20Grupo%20Corcelli!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20e%20servi%C3%A7os%20dispon%C3%ADveis" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Grupo Corcelli">
         <img class="icon-img" src="whatsapp.svg" alt="WhatsApp">
         <span class="icon-label">WhatsApp</span>
       </a>
-      <a class="icon-link" href="https://facebook.com/grupo.corcelli" target="_blank" rel="noopener noreferrer" aria-label="Facebook Grupo Corcelli">
+      <a class="icon-link" href="https://facebook.com/conceptstore.corcelli" target="_blank" rel="noopener noreferrer" aria-label="Facebook Grupo Corcelli">
         <img class="icon-img" src="facebook.svg" alt="Facebook">
         <span class="icon-label">Facebook</span>
       </a>
-      <a class="icon-link" href="https://instagram.com/Grupo_Corcelli" target="_blank" rel="noopener noreferrer" aria-label="Instagram Grupo Corcelli">
+      <a class="icon-link" href="https://instagram.com/conceptstore.Corcelli" target="_blank" rel="noopener noreferrer" aria-label="Instagram Grupo Corcelli">
         <img class="icon-img" src="instagram.svg" alt="Instagram">
         <span class="icon-label">Instagram</span>
       </a>
-      <a class="icon-link" href="https://www.tiktok.com/@grupocorcelli" target="_blank" rel="noopener noreferrer" aria-label="TikTok Grupo Corcelli">
+      <a class="icon-link" href="https://www.tiktok.com/@conceptstore.corcelli" target="_blank" rel="noopener noreferrer" aria-label="TikTok Grupo Corcelli">
         <img class="icon-img" src="tiktok.svg" alt="TikTok">
         <span class="icon-label">TikTok</span>
       </a>
@@ -241,7 +204,7 @@
         <img class="icon-img" src="logo/logo3.png" alt="Site">
         <span class="icon-label">Site</span>
       </a>
-      <a class="icon-link" href="mailto:botcorcelli@gmail.com" aria-label="E-mail Grupo Corcelli">
+      <a class="icon-link" href="mailto:caixa03.1@gmail.com" aria-label="E-mail Grupo Corcelli">
         <img class="icon-img" src="email.svg" alt="E-mail">
         <span class="icon-label">E-mail</span>
       </a>
@@ -335,11 +298,9 @@
       else goToSlide(idx, true);
       lastDx = 0;
     }
-    // Touch events
     carousel.addEventListener('touchstart', e => dragStart(e.touches[0].clientX));
     carousel.addEventListener('touchmove', e => dragMove(e.touches[0].clientX));
     carousel.addEventListener('touchend', dragEnd);
-    // Mouse events
     carousel.addEventListener('mousedown', e => { e.preventDefault(); dragStart(e.clientX); });
     window.addEventListener('mousemove', e => dragMove(e.clientX));
     window.addEventListener('mouseup', dragEnd);

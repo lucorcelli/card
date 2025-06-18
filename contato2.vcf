@@ -4,13 +4,13 @@ FN:STUDIO LIVE!
 N:Itatiba;Live!;;;
 item1.EMAIL;TYPE=INTERNET:studioliveitatiba@gmail.com
 item1.X-ABLabel:Email
-item2.TEL:114524-1485
+item2.TEL:114538-5420
 item2.X-ABLabel:comercial
-item3.TEL:5511915417060
-item3.X-ABLabel:Whatsapp
+item3.TEL:11913229308
+item3.X-ABLabel:Celular
 ADR;TYPE=HOME:;Redes sociais;;;;;
 ORG:Loja
-item4.URL:https\://api.whatsapp.com/send?phone=5511915417060
+item4.URL:https\://api.whatsapp.com/send?phone=5511913229308
 item4.X-ABLabel:Whatsapp
 item5.URL:https\://instagram.com/Grupo_Corcelli
 item5.X-ABLabel:Instagran

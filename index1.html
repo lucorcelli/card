@@ -26,14 +26,12 @@
       position: relative;
       width: 130px;
       height: 130px;
-      margin: 0 auto 25px auto;
-      display: block;
+      margin: 0 auto 25px;
     }
-    .logo-fade .logo-img {
+    .logo-img {
       position: absolute;
       left: 0; top: 0;
-      width: 130px;
-      height: 130px;
+      width: 130px; height: 130px;
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid #fff;
@@ -43,10 +41,8 @@
       opacity: 0;
       z-index: 1;
     }
-    .logo-fade .logo-img.show {
-      opacity: 1;
-      z-index: 2;
-    }
+    .logo-img.show { opacity: 1; z-index: 2; }
+
     h1, .redes-title, .destaque-label, .icon-label {
       color: #fff;
       text-shadow: 0 1px 4px #0009;
@@ -54,8 +50,7 @@
     .redes-title {
       font-size: 18px;
       font-weight: bold;
-      margin: 32px 0 22px 0;
-      letter-spacing: 0.01em;
+      margin: 32px 0 22px;
     }
     .destaque-row {
       display: flex;
@@ -77,35 +72,35 @@
       opacity: 0.9;
       transform: translateY(-1px) scale(1.04);
     }
-    .destaque-link .icon-img {
-      width: 70px;
-      height: 70px;
-      border-radius: 40%;
+    .icon-img {
+      width: 80px; height: 80px;
+      border-radius: 50%;
       object-fit: contain;
-      margin-bottom: 6px;
       background: #fff;
-      box-shadow: 0 2px 10px #0002;
+      box-shadow: 0 2px 6px #0001;
+      margin-bottom: 4px;
       padding: 4px;
       border: 2px solid #eee;
       transition: box-shadow 0.2s;
     }
-    .destaque-link.phone .icon-img {
+    .destaque-link .icon-img {
+      width: 70px; height: 70px;
+      border-radius: 40%;
+      margin-bottom: 6px;
+      border: 2px solid #eee;
       background: #1877F3;
-      border: 2px solid #1257A3;
+      border-color: #1257A3;
     }
     .destaque-label {
       font-size: 14px;
       font-weight: bold;
       margin-top: 2px;
-      transition: opacity 0.18s;
-      letter-spacing: 0.01em;
     }
     .icon-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px 12px;
       justify-items: center;
-      margin-top: 0;
       margin-bottom: 16px;
     }
     .icon-link {
@@ -123,29 +118,12 @@
       opacity: 0.9;
       transform: translateY(-2px) scale(1.03);
     }
-    .icon-img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: contain;
-      background: #fff;
-      box-shadow: 0 2px 6px #0001;
-      margin-bottom: 4px;
-      padding: 4px;
-      border: 2px solid #eee;
-      transition: box-shadow 0.2s;
-    }
     .icon-label {
-    opacity: 1;
-    height: auto;
-    font-size: 10px;
-    font-weight: 500;
-    transition: opacity 0.18s;
-    margin-top: 1px;
-    margin-bottom: 0;
-    letter-spacing: 0.01em;
-    color: #fff;
-    text-shadow: 0 1px 4px #0009;
+      font-size: 10px;
+      font-weight: 500;
+      margin-top: 1px;
+      color: #fff;
+      text-shadow: 0 1px 4px #0009;
     }
     footer {
       margin-top: 25px;
@@ -157,7 +135,7 @@
       width: 100vw;
       max-width: 530px;
       overflow: hidden;
-      margin: 10px auto 0 auto;
+      margin: 10px auto 0;
       border-radius: 12px;
       box-shadow: 0 2px 10px #0005;
       background: #fff;
@@ -213,14 +191,13 @@
       .icon-grid { grid-template-columns: repeat(3, 1fr); gap: 18px 8px; }
       .icon-img,
       .destaque-link .icon-img { width: 70px; height: 70px; }
-      .logo-fade, .logo-fade .logo-img { width: 90px; height: 90px;}
+      .logo-fade, .logo-img { width: 90px; height: 90px;}
       .destaque-label { font-size: 12px; }
     }
   </style>
 </head>
 <body>
   <main class="container">
-    <!-- Logo com fade multicolorido -->
     <div class="logo-fade" id="logo-fade">
       <img class="logo-img show" src="logo/logo1.png" alt="Logo Corcelli cor 1">
       <img class="logo-img" src="logo/logo2.png" alt="Logo Corcelli cor 2">
@@ -279,7 +256,7 @@
   </div>
   <script>
     // LOGO FADING EFFECT
-    (function() {
+    (() => {
       const logos = document.querySelectorAll('#logo-fade .logo-img');
       let logoIdx = 0;
       setInterval(() => {
@@ -288,114 +265,85 @@
         logos[logoIdx].classList.add('show');
       }, 1800);
     })();
+
     // CAROUSEL
     const images = [
-      "carrossel/img1.PNG",
-      "carrossel/img2.PNG",
-      "carrossel/img3.PNG",
-      "carrossel/img4.PNG",
-      "carrossel/img5.PNG",
-      "carrossel/img6.PNG",
-      "carrossel/img7.PNG",
-      "carrossel/img8.PNG",
-      "carrossel/img9.PNG",
-      "carrossel/img10.PNG"
+      "carrossel/img1.PNG","carrossel/img2.PNG","carrossel/img3.PNG","carrossel/img4.PNG","carrossel/img5.PNG",
+      "carrossel/img6.PNG","carrossel/img7.PNG","carrossel/img8.PNG","carrossel/img9.PNG","carrossel/img10.PNG"
     ];
     const carousel = document.getElementById('carousel');
     const dotsContainer = document.getElementById('carousel-dots');
-    let idx = 0, intervalId = null, isDragging = false, startX = 0, currentX = 0, lastDx = 0;
+    let idx = 0, intervalId = null, dragging = false, startX = 0, lastDx = 0;
+
     images.forEach((src, i) => {
       const img = document.createElement('img');
       img.src = src;
       img.alt = `Imagem do carrossel ${i+1}`;
       carousel.appendChild(img);
-    });
-    function getSlideWidth() {
-      return document.querySelector('.carousel-wrapper').offsetWidth;
-    }
-    function updateCarouselWidth() {
-      const slideWidth = getSlideWidth();
-      carousel.style.width = (slideWidth * images.length) + 'px';
-      Array.from(carousel.children).forEach(img => {
-        img.style.width = slideWidth + 'px';
-      });
-    }
-    updateCarouselWidth();
-    images.forEach((_, i) => {
       const dot = document.createElement('span');
       dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
       dot.onclick = () => goToSlide(i, true);
       dotsContainer.appendChild(dot);
     });
+
+    function getSlideWidth() {
+      return document.querySelector('.carousel-wrapper').offsetWidth;
+    }
+    function updateCarouselWidth() {
+      const w = getSlideWidth();
+      carousel.style.width = (w * images.length) + 'px';
+      Array.from(carousel.children).forEach(img => img.style.width = w + 'px');
+    }
     function updateDots() {
-      document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
-        dot.classList.toggle('active', i === idx);
-      });
+      document.querySelectorAll('.carousel-dot').forEach((dot, i) =>
+        dot.classList.toggle('active', i === idx)
+      );
     }
     function goToSlide(i, resetTimer) {
       idx = (i + images.length) % images.length;
-      const slideWidth = getSlideWidth();
-      carousel.style.transform = `translateX(-${idx * slideWidth}px)`;
+      carousel.style.transform = `translateX(-${idx * getSlideWidth()}px)`;
       updateDots();
       if (resetTimer) {
         clearInterval(intervalId);
-        intervalId = setInterval(nextSlide, 2000);
+        intervalId = setInterval(() => goToSlide(idx + 1), 2000);
       }
     }
-    function nextSlide() { goToSlide(idx + 1); }
-    intervalId = setInterval(nextSlide, 2000);
-    window.addEventListener('resize', () => {
-      updateCarouselWidth();
-      goToSlide(idx);
-    });
-    carousel.addEventListener('touchstart', e => {
-      isDragging = true;
-      startX = e.touches[0].clientX;
+    intervalId = setInterval(() => goToSlide(idx + 1), 2000);
+
+    window.addEventListener('resize', () => { updateCarouselWidth(); goToSlide(idx); });
+    window.addEventListener('DOMContentLoaded', () => { updateCarouselWidth(); goToSlide(0); });
+
+    // Unified drag for mouse/touch
+    function dragStart(x) {
+      dragging = true;
+      startX = x;
       lastDx = 0;
       carousel.style.transition = 'none';
       clearInterval(intervalId);
-    });
-    carousel.addEventListener('touchmove', e => {
-      if (!isDragging) return;
-      currentX = e.touches[0].clientX;
-      const dx = currentX - startX;
-      lastDx = dx;
-      const slideWidth = getSlideWidth();
-      carousel.style.transform = `translateX(${-idx * slideWidth + dx}px)`;
-    });
-    carousel.addEventListener('touchend', e => {
-      if (!isDragging) return;
-      isDragging = false;
+    }
+    function dragMove(x) {
+      if (!dragging) return;
+      lastDx = x - startX;
+      carousel.style.transform = `translateX(${-idx * getSlideWidth() + lastDx}px)`;
+    }
+    function dragEnd() {
+      if (!dragging) return;
+      dragging = false;
       carousel.style.transition = '';
       if (lastDx > 50) goToSlide(idx - 1, true);
       else if (lastDx < -50) goToSlide(idx + 1, true);
       else goToSlide(idx, true);
       lastDx = 0;
-    });
-    let mouseDown = false;
-    carousel.addEventListener('mousedown', e => {
-      mouseDown = true; startX = e.clientX; lastDx = 0;
-      clearInterval(intervalId); carousel.style.transition = 'none';
-    });
-    carousel.addEventListener('mousemove', e => {
-      if (!mouseDown) return;
-      currentX = e.clientX;
-      const dx = currentX - startX;
-      lastDx = dx;
-      const slideWidth = getSlideWidth();
-      carousel.style.transform = `translateX(${-idx * slideWidth + dx}px)`;
-    });
-    carousel.addEventListener('mouseup', e => {
-      if (!mouseDown) return;
-      mouseDown = false;
-      carousel.style.transition = '';
-      if (lastDx > 50) goToSlide(idx - 1, true);
-      else if (lastDx < -50) goToSlide(idx + 1, true);
-      else goToSlide(idx, true);
-      lastDx = 0;
-    });
-    carousel.addEventListener('mouseleave', e => { if (mouseDown) { mouseDown = false; goToSlide(idx, true); } });
-    window.addEventListener('DOMContentLoaded', () => goToSlide(0));
+    }
+    // Touch events
+    carousel.addEventListener('touchstart', e => dragStart(e.touches[0].clientX));
+    carousel.addEventListener('touchmove', e => dragMove(e.touches[0].clientX));
+    carousel.addEventListener('touchend', dragEnd);
+    // Mouse events
+    carousel.addEventListener('mousedown', e => { e.preventDefault(); dragStart(e.clientX); });
+    window.addEventListener('mousemove', e => dragMove(e.clientX));
+    window.addEventListener('mouseup', dragEnd);
+    carousel.addEventListener('mouseleave', dragEnd);
   </script>
 </body>
 </html>

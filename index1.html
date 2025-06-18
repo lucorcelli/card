@@ -43,7 +43,7 @@
     }
     .logo-img.show { opacity: 1; z-index: 2; }
 
-    h1, .redes-title, .destaque-label, .icon-label {
+    h1, .redes-title {
       color: #fff;
       text-shadow: 0 1px 4px #0009;
     }
@@ -51,50 +51,6 @@
       font-size: 18px;
       font-weight: bold;
       margin: 32px 0 22px;
-    }
-    .destaque-row {
-      display: flex;
-      justify-content: center;
-      gap: 80px;
-      margin-bottom: 16px;
-    }
-    .destaque-link {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
-      color: #fff;
-      cursor: pointer;
-    }
-    .destaque-link:active,
-    .destaque-link:focus,
-    .destaque-link:hover {
-      opacity: 0.9;
-      transform: translateY(-1px) scale(1.04);
-    }
-    .icon-img {
-      width: 80px; height: 80px;
-      border-radius: 30%;
-      object-fit: contain;
-      background: #fff;
-      box-shadow: 0 2px 6px #0001;
-      margin-bottom: 4px;
-      padding: 4px;
-      border: 2px solid #eee;
-      transition: box-shadow 0.2s;
-    }
-    .destaque-link .icon-img {
-      width: 80px; height: 80px;
-      border-radius: 30%;
-      margin-bottom: 6px;
-      border: 2px solid #eee;
-      background: #1877F3;
-      border-color: #1257A3;
-    }
-    .destaque-label {
-      font-size: 14px;
-      font-weight: 500;
-      margin-top: 1px;
     }
     .icon-grid {
       display: grid;
@@ -118,8 +74,19 @@
       opacity: 0.9;
       transform: translateY(-2px) scale(1.03);
     }
+    .icon-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 30%;
+      object-fit: contain;
+      background: #fff;
+      box-shadow: 0 2px 6px #0001;
+      margin-bottom: 4px;
+      padding: 4px;
+      border: 2px solid #eee;
+    }
     .icon-label {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 500;
       margin-top: 1px;
       color: #fff;
@@ -189,10 +156,8 @@
       }
       .container { max-width: 98vw; padding: 10vw 1vw; }
       .icon-grid { grid-template-columns: repeat(3, 1fr); gap: 18px 8px; }
-      .icon-img,
-      .destaque-link .icon-img { width: 70px; height: 70px; }
+      .icon-img { width: 50px; height: 50px; }
       .logo-fade, .logo-img { width: 90px; height: 90px;}
-      .destaque-label { font-size: 12px; }
     }
   </style>
 </head>
@@ -333,11 +298,9 @@
       else goToSlide(idx, true);
       lastDx = 0;
     }
-    // Touch events
     carousel.addEventListener('touchstart', e => dragStart(e.touches[0].clientX));
     carousel.addEventListener('touchmove', e => dragMove(e.touches[0].clientX));
     carousel.addEventListener('touchend', dragEnd);
-    // Mouse events
     carousel.addEventListener('mousedown', e => { e.preventDefault(); dragStart(e.clientX); });
     window.addEventListener('mousemove', e => dragMove(e.clientX));
     window.addEventListener('mouseup', dragEnd);

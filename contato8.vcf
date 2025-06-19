@@ -1,0 +1,25 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Grupo Corcelli Louveira
+N:Corcelli;Grupo;;;
+item1.EMAIL;TYPE=INTERNET:caixa08.1@gmail.com
+item1.X-ABLabel:Email
+item2.TEL:193848-2017
+item2.X-ABLabel:Comercial
+item3.TEL:551196948-4428
+item3.X-ABLabel:celular
+ADR;TYPE=HOME:;Redes sociais;;;;;
+ORG:Lojas
+item4.URL:https\://api.whatsapp.com/send?phone=5511915417060
+item4.X-ABLabel:Whatsapp
+item5.URL:https\://instagram.com/Corcellilouveira
+item5.X-ABLabel:Instagran
+item6.URL:https\://facebook.com/corcellilouveira
+item6.X-ABLabel:Facebook -
+item7.URL:http\://www.grupocorcelli.com/
+item7.X-ABLabel:WebSite
+item8.URL:https\://www.tiktok.com/grupocorcelli
+item8.X-ABLabel:TikTok
+PHOTO:https://lucorcelli.github.io/card/logo/logo1.png
+CATEGORIES:myContacts
+END:VCARD

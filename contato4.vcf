@@ -1,6 +1,6 @@
 BEGIN:VCARD
 VERSION:3.0
-FN:Grupo Corcelli
+FN:Grupo Corcelli Barão
 N:Corcelli;Grupo;;;
 item1.EMAIL;TYPE=INTERNET:caixa04.1@gmail.com
 item1.X-ABLabel:Email
@@ -20,7 +20,6 @@ item7.URL:http\://www.grupocorcelli.com/
 item7.X-ABLabel:WebSite
 item8.URL:https\://www.tiktok.com/grupocorcelli
 item8.X-ABLabel:TikTok
-PHOTO:https://lh3.googleusercontent.com/contacts/AG6tpzHVX81J7NxXiSs8iJYw92
- -HCP93B54CUtySsmededSzARzFGPdm
+PHOTO:https://lucorcelli.github.io/card/logo/logo1.png
 CATEGORIES:myContacts
 END:VCARD

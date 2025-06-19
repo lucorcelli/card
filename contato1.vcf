@@ -1,13 +1,13 @@
 BEGIN:VCARD
 VERSION:3.0
-FN:Grupo Corcelli Corcelli & Cia
+FN:Grupo Corcelli Avenida
 N:Corcelli;Grupo;;;
-item1.EMAIL;TYPE=INTERNET:caixa05.1@gmail.com
+item1.EMAIL;TYPE=INTERNET:caixa01.3@gmail.com
 item1.X-ABLabel:Email
-item2.TEL:114538-6995
-item2.X-ABLabel:Comercial
-item3.TEL:5511981950564
-item3.X-ABLabel:celular
+item2.TEL:114524-1485
+item2.X-ABLabel:Celular
+item3.TEL:5511915417060
+item3.X-ABLabel:Whatsapp
 ADR;TYPE=HOME:;Redes sociais;;;;;
 ORG:Lojas
 item4.URL:https\://api.whatsapp.com/send?phone=5511915417060

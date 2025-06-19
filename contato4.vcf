@@ -1,0 +1,26 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Grupo Corcelli
+N:Corcelli;Grupo;;;
+item1.EMAIL;TYPE=INTERNET:caixa04.1@gmail.com
+item1.X-ABLabel:Email
+item2.TEL:114538-5018
+item2.X-ABLabel:Comercial
+item3.TEL:5511981952142
+item3.X-ABLabel:celular
+ADR;TYPE=HOME:;Redes sociais;;;;;
+ORG:Lojas
+item4.URL:https\://api.whatsapp.com/send?phone=5511915417060
+item4.X-ABLabel:Whatsapp
+item5.URL:https\://instagram.com/Grupo_Corcelli
+item5.X-ABLabel:Instagran
+item6.URL:https\://facebook.com/grupo.corcelli
+item6.X-ABLabel:Facebook -
+item7.URL:http\://www.grupocorcelli.com/
+item7.X-ABLabel:WebSite
+item8.URL:https\://www.tiktok.com/grupocorcelli
+item8.X-ABLabel:TikTok
+PHOTO:https://lh3.googleusercontent.com/contacts/AG6tpzHVX81J7NxXiSs8iJYw92
+ -HCP93B54CUtySsmededSzARzFGPdm
+CATEGORIES:myContacts
+END:VCARD

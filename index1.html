@@ -217,6 +217,7 @@
     <div class="carousel" id="carousel"></div>
     <div class="carousel-dots" id="carousel-dots"></div>
   </div>
+  <div Class="compact-counter" id= "VisitCounter-index1"></div>
   <script>
     // LOGO FADING EFFECT
     (() => {
@@ -305,6 +306,7 @@
     window.addEventListener('mousemove', e => dragMove(e.clientX));
     window.addEventListener('mouseup', dragEnd);
     carousel.addEventListener('mouseleave', dragEnd);
+    new CompactVsitCounter('visitCounter-index1');
   </script>
 </body>
 </html>

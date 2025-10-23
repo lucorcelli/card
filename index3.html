@@ -40,9 +40,14 @@
       background: #fff;
       animation: balanco 1.2s ease-in-out infinit;
     }
-    @keyframes girar {
-      100% { transform: rotate(360deg); }
+    @keyframes balanco {
+      0%   { transform: translateY(0px) rotate(0deg); }
+      25%  { transform: translateY(-2px) rotate(-1deg); }
+      50%  { transform: translateY(0px) rotate(0deg); }
+      75%  { transform: translateY(2px) rotate(1deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
     }
+
     h1, .redes-title {
       color: #fff;
       text-shadow: 0 1px 4px #0009;

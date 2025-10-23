@@ -1,7 +1,7 @@
 BEGIN:VCARD
 VERSION:3.0
-FN:Concept Store by Corcelli
-N:Corcelli;Concept;Store;;
+FN:Ophicina Itatiba by Corcelli
+N:Corcelli;Ophicina;Itatiba;;
 item1.EMAIL;TYPE=INTERNET:caixa03.1@gmail.com
 item1.X-ABLabel:Email
 item2.TEL:114538-5420
@@ -20,6 +20,7 @@ item7.URL:http\://www.grupocorcelli.com/
 item7.X-ABLabel:WebSite
 item8.URL:https\://www.tiktok.com/@conceptstore.corcelli
 item8.X-ABLabel:TikTok
-PHOTO:https://lucorcelli.github.io/card/logo3/logo1.png
+PHOTO:https://lucorcelli.github.io/card/logo3/logo2.png
 CATEGORIES:myContacts
 END:VCARD
+

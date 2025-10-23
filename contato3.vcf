@@ -12,15 +12,14 @@ ADR;TYPE=HOME:;Redes sociais;;;;;
 ORG:Loja
 item4.URL:https\://api.whatsapp.com/send?phone=5511915417060
 item4.X-ABLabel:Whatsapp
-item5.URL:https\://instagram.com/conceptstore.Corcelli
+item5.URL:https\://instagram.com/Ophicina_Itatiba
 item5.X-ABLabel:Instagran
-item6.URL:https\://facebook.com/conceptstore.corcelli
-item6.X-ABLabel:Facebook -
-item7.URL:http\://www.grupocorcelli.com/
+item7.URL:http\://www.ophicina.com.br
 item7.X-ABLabel:WebSite
-item8.URL:https\://www.tiktok.com/@conceptstore.corcelli
+item8.URL:https\://www.tiktok.com/@Ophicina
 item8.X-ABLabel:TikTok
 PHOTO:https://lucorcelli.github.io/card/logo3/logo2.png
 CATEGORIES:myContacts
 END:VCARD
+
 

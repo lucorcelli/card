@@ -18,8 +18,9 @@ item7.URL:http\://www.ophicina.com.br
 item7.X-ABLabel:WebSite
 item8.URL:https\://www.tiktok.com/@Ophicina
 item8.X-ABLabel:TikTok
-PHOTO:https://lucorcelli.github.io/card/logo3/logo2.png
+PHOTO;VALUE=URI:https://lucorcelli.github.io/card/logo3/logo2.png
 CATEGORIES:myContacts
 END:VCARD
+
 
 
